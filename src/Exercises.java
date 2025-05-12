@@ -75,7 +75,7 @@ public class Exercises {
      * input: 3 -> 7 -> 7 -> 12 -> 15
      * output: true
      * 
-     * input 3 -> 1 -> 7 -> 9
+     * input: 3 -> 1 -> 7 -> 9
      * output: false
      * 
      * @param head the head of the list
