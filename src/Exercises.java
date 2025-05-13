@@ -82,14 +82,16 @@ public class Exercises {
      * @param head the head of the list
      */
     public static void makePositive(ListNode head) {
-        ListNode current = head;
-        while (current != null) {
-            if (current.data < 0) {
-                current.data = -current.data;
-            }
+       if (head == null) {
+        return;
+       }
+       ListNode current = head;
+       while(current != null) {
+        if (current.data <0) {
+            current.data = Math.abs(current.data); }
             current = current.next;
         }
-    }
+       }
 
     /**
      * Returns true if every value in the list is less than or equal to the next
