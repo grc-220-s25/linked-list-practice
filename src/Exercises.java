@@ -12,7 +12,16 @@ public class Exercises {
      * @return sum of the values in the list
      */
     public static int sum(ListNode head) {
-        return -1;
+        if( head == null) {
+            return 0;
+        }
+        ListNode current = head;
+        int sum = 0;
+        while(current != null ) {
+            sum += current.data;
+            current = current.next;
+        }
+        return sum;
     }
 
     /**
@@ -28,8 +37,20 @@ public class Exercises {
      * @return a count of the negative values in the list
      */
     public static int countNegative(ListNode head) {
-        return -1;
-    }
+        if(head == null) {
+            return 0;
+        }
+        int count = 0;
+        ListNode current = head;
+        while(current != null ) {
+            if(current.data < 0 ) {
+                count++;
+            }
+            current = current.next;
+        }
+    return count;
+}
+
 
     /**
      * Adds a new ListNode with the given value to the end of the linked list.
@@ -47,6 +68,15 @@ public class Exercises {
      */
     public static void addToEnd(ListNode head, int toAdd) {
 
+        if(head == null) {
+            return;
+        }
+
+        ListNode current = head;
+        while(current.next != null ) {
+            current = current.next;
+       }
+      current.next = new ListNode(toAdd);
     }
 
     /**
@@ -62,7 +92,16 @@ public class Exercises {
      * @param head the head of the list
      */
     public static void makePositive(ListNode head) {
-
+        if(head == null) {
+            return;
+        }
+        ListNode current = head;
+        while(current != null) {
+            if(current.data < 0) {
+                current.data = Math.abs(current.data);
+            }
+            current = current.next;
+        }
     }
 
     /**
@@ -82,6 +121,16 @@ public class Exercises {
      * @return whether the list is increasing
      */
     public static boolean isIncreasing(ListNode head) {
-        return false;
+        if(head == null || head.next == null) {
+            return true;
+        }
+        ListNode current = head;
+        while(current.next != null) {
+            if(current.data > current.next.data) {
+                return false;
+            }
+            current = current.next;
+        }
+        return true;
     }
 }
