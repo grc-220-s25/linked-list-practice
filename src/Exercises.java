@@ -26,6 +26,21 @@ public class Exercises {
             }
             current = current.next;
         }
+        System.out.println();
+
+        makePositive(head);
+        current = head;
+        System.out.print("ListNode makePositive: ");
+        while (current != null) {
+            System.out.print(current.data + " -> ");
+            if (current.next == null) {
+                System.out.print("null");
+                break;
+            }
+            current = current.next;
+        }
+        System.out.println();
+
     }
 
     /**
@@ -112,7 +127,13 @@ public class Exercises {
      * @param head the head of the list
      */
     public static void makePositive(ListNode head) {
-
+        ListNode current = head;
+        while (current != null) {
+            if (current.data < 0) {
+                current.data = Math.abs(current.data);
+            }
+            current = current.next;
+        }
     }
 
     /**
