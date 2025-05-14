@@ -1,4 +1,32 @@
 public class Exercises {
+    
+    public static void main(String[] args) {
+        ListNode head = new ListNode(4);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(10);
+        head.next.next.next = new ListNode(1);
+
+        ListNode negHead = new ListNode(8);
+        negHead.next = new ListNode(-6);
+        negHead.next.next = new ListNode(7);
+        negHead.next.next.next = new ListNode(-3);
+        negHead.next.next.next.next = new ListNode(8);
+
+        ListNode increasing = new ListNode(1);
+        increasing.next = new ListNode(2);
+        increasing.next.next = new ListNode(3);
+        increasing.next.next.next = new ListNode(4);        
+    
+        System.out.println(sum(head));
+        System.out.println(countNegative(negHead));        
+        addToEnd(head, 99);
+        System.out.println(sum(head));
+        System.out.println(countNegative(negHead));
+        makePositive(negHead);
+        System.out.println(countNegative(negHead));                
+        System.out.println(isIncreasing(increasing));
+                
+    }
     /**
      * Returns the sum of the values in the linked list.
      * 
@@ -12,7 +40,15 @@ public class Exercises {
      * @return sum of the values in the list
      */
     public static int sum(ListNode head) {
-        return -1;
+        int sum = 0;
+        ListNode curr = head;
+        
+        while (curr != null) {
+            sum += curr.data;
+            curr = curr.next;
+        }
+
+        return sum;
     }
 
     /**
@@ -28,7 +64,16 @@ public class Exercises {
      * @return a count of the negative values in the list
      */
     public static int countNegative(ListNode head) {
-        return -1;
+        int count = 0;
+        ListNode curr = head;
+
+        while(curr != null) {
+            if(curr.data < 0) {
+            count++;
+            }
+            curr = curr.next;
+        }
+        return count;
     }
 
     /**
@@ -46,7 +91,16 @@ public class Exercises {
      * @param toAdd the value to append in a new node
      */
     public static void addToEnd(ListNode head, int toAdd) {
-
+        ListNode addedNode = new ListNode(toAdd);
+        
+        ListNode curr = head;
+        if (head == null) {
+            return;
+        }
+        while(curr.next != null) {
+            curr = curr.next;
+        }
+        curr.next = addedNode;        
     }
 
     /**
@@ -62,8 +116,14 @@ public class Exercises {
      * @param head the head of the list
      */
     public static void makePositive(ListNode head) {
-
-    }
+        ListNode curr = head;
+        while(curr != null) {
+            if (curr.data < 0) {
+            curr.data = -curr.data;
+        }
+        curr = curr.next;
+    }        
+}
 
     /**
      * Returns true if every value in the list is less than or equal to the next
@@ -82,6 +142,21 @@ public class Exercises {
      * @return whether the list is increasing
      */
     public static boolean isIncreasing(ListNode head) {
-        return false;
-    }
+            ListNode curr = head;
+            
+            if (head == null || head.next == null) {
+                return true;
+            }
+
+            while(curr.next != null) {
+            if (curr.data > curr.next.data) {
+                return false;
+                }
+                curr = curr.next;
+            }
+
+        return true;
+    }        
 }
+
+ 
