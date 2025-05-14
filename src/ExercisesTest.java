@@ -75,67 +75,67 @@ public class ExercisesTest {
 
     // ===== Tests for countNegative(ListNode) =====
 
-    @Test
-    public void testCountNegativeExample() {
-        ListNode head = buildList(4, -6, 7, -3, 8);
-        assertEquals(2, Exercises.countNegative(head), "countNegative of 4 -> -6 -> 7 -> -3 -> 8 should be 2");
-    }
+    // @Test
+    // public void testCountNegativeExample() {
+    //     ListNode head = buildList(4, -6, 7, -3, 8);
+    //     assertEquals(2, Exercises.countNegative(head), "countNegative of 4 -> -6 -> 7 -> -3 -> 8 should be 2");
+    // }
 
-    @Test
-    public void testCountNegativeNull() {
-        assertEquals(0, Exercises.countNegative(null), "countNegative of null list should be 0");
-    }
+    // @Test
+    // public void testCountNegativeNull() {
+    //     assertEquals(0, Exercises.countNegative(null), "countNegative of null list should be 0");
+    // }
 
-    @Test
-    public void testCountNegativeSinglePositive() {
-        ListNode head = buildList(5);
-        assertEquals(0, Exercises.countNegative(head), "countNegative of 5 should be 0");
-    }
+    // @Test
+    // public void testCountNegativeSinglePositive() {
+    //     ListNode head = buildList(5);
+    //     assertEquals(0, Exercises.countNegative(head), "countNegative of 5 should be 0");
+    // }
 
-    @Test
-    public void testCountNegativeSingleNegative() {
-        ListNode head = buildList(-5);
-        assertEquals(1, Exercises.countNegative(head), "countNegative of -5 should be 1");
-    }
+    // @Test
+    // public void testCountNegativeSingleNegative() {
+    //     ListNode head = buildList(-5);
+    //     assertEquals(1, Exercises.countNegative(head), "countNegative of -5 should be 1");
+    // }
 
-    @Test
-    public void testCountNegativeAtEnds() {
-        ListNode head = buildList(-1, 2, 3, -4);
-        assertEquals(2, Exercises.countNegative(head), "countNegative should count -1 -> 2 -> 3 -> -4 as 2 negatives");
-    }
+    // @Test
+    // public void testCountNegativeAtEnds() {
+    //     ListNode head = buildList(-1, 2, 3, -4);
+    //     assertEquals(2, Exercises.countNegative(head), "countNegative should count -1 -> 2 -> 3 -> -4 as 2 negatives");
+    // }
 
-    @Test
-    public void testCountNegativeAllNegatives() {
-        ListNode head = buildList(-1, -2, -3);
-        assertEquals(3, Exercises.countNegative(head), "countNegative of -1 -> -2 -> -3 should be 3");
-    }
+    // @Test
+    // public void testCountNegativeAllNegatives() {
+    //     ListNode head = buildList(-1, -2, -3);
+    //     assertEquals(3, Exercises.countNegative(head), "countNegative of -1 -> -2 -> -3 should be 3");
+    // }
 
     // ===== Tests for addToEnd(ListNode, int) =====
 
-    // @Test
-    // public void testAddToEndExample() {
-    //     ListNode head = buildList(8, 3, 2, 7);
-    //     Exercises.addToEnd(head, 99);
-    //     String expected = "8 -> 3 -> 2 -> 7 -> 99";
-    //     assertEquals(expected, listToString(head),
-    //         "After addToEnd, expected " + expected + ", got " + listToString(head));
-    // }
+    @Test
+    public void testAddToEndExample() {
+        ListNode head = buildList(8, 3, 2, 7);
+        Exercises.addToEnd(head, 99);
+        String expected = "8 -> 3 -> 2 -> 7 -> 99";
+        assertEquals(expected, listToString(head),
+            "After addToEnd, expected " + expected + ", got " + listToString(head));
+    }
 
-    // @Test
-    // public void testAddToEndSingle() {
-    //     ListNode head = buildList(1);
-    //     Exercises.addToEnd(head, 8);
-    //     String expected = "1 -> 8";
-    //     assertEquals(expected, listToString(head),
-    //         "After addToEnd on single-node list, expected " + expected + ", got " + listToString(head));
-    // }
+    @Test
+    public void testAddToEndSingle() {
+        ListNode head = buildList(1);
+        Exercises.addToEnd(head, 8);
+        String expected = "1 -> 8";
+        assertEquals(expected, listToString(head),
+            "After addToEnd on single-node list, expected " + expected + ", got " + listToString(head));
+    }
 
-    // @Test
-    // public void testAddToEndNull() {
-    //     ListNode head = null;
-    //     assertDoesNotThrow(() -> Exercises.addToEnd(head, 5), "addToEnd(null,5) should not throw");
-    //     assertNull(head, "Head should remain null after addToEnd(null,5)");
-    // }
+    @Test
+    public void testAddToEndNull() {
+        ListNode head = null;
+        assertDoesNotThrow(() -> Exercises.addToEnd(head, 5), "addToEnd(null,5) should not throw");
+        assertNull(head, "Head should remain null after addToEnd(null,5)");
+    }
 
     // // ===== Tests for makePositive(ListNode) =====
 
