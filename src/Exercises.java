@@ -18,6 +18,9 @@ public class Exercises {
         System.out.println(countNegative(negHead));        
         addToEnd(head, 99);
         System.out.println(sum(head));
+        System.out.println(countNegative(negHead));
+        makePositive(negHead);
+        System.out.println(countNegative(negHead));                
 
     }
     /**
@@ -109,7 +112,13 @@ public class Exercises {
      * @param head the head of the list
      */
     public static void makePositive(ListNode head) {
-
+        ListNode curr = head;
+        while(curr != null) {
+            if (curr.data < 0) {
+            curr.data = -curr.data;
+        }
+        curr = curr.next;
+    }        
 }
 
     /**
