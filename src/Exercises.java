@@ -1,4 +1,17 @@
 public class Exercises {
+    
+    public static void main(String[] args) {
+        ListNode head = new ListNode(4);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(10);
+        head.next.next.next = new ListNode(1);
+
+
+
+    
+        System.out.println(sum(head));
+
+    }
     /**
      * Returns the sum of the values in the linked list.
      * 
@@ -12,7 +25,15 @@ public class Exercises {
      * @return sum of the values in the list
      */
     public static int sum(ListNode head) {
-        return -1;
+        int sum = 0;
+        ListNode curr = head;
+        
+        while (curr != null) {
+            sum += curr.data;
+            curr = curr.next;
+        }
+
+        return sum;
     }
 
     /**
@@ -28,7 +49,7 @@ public class Exercises {
      * @return a count of the negative values in the list
      */
     public static int countNegative(ListNode head) {
-        return -1;
+
     }
 
     /**
@@ -63,7 +84,7 @@ public class Exercises {
      */
     public static void makePositive(ListNode head) {
 
-    }
+}
 
     /**
      * Returns true if every value in the list is less than or equal to the next
@@ -82,6 +103,7 @@ public class Exercises {
      * @return whether the list is increasing
      */
     public static boolean isIncreasing(ListNode head) {
-        return false;
+
     }
-}
+
+ }
