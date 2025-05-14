@@ -137,7 +137,7 @@ public class ExercisesTest {
         assertNull(head, "Head should remain null after addToEnd(null,5)");
     }
 
-    // ===== Tests for makePositive(ListNode) =====
+    // // ===== Tests for makePositive(ListNode) =====
 
     @Test
     public void testMakePositiveExample() {
@@ -186,7 +186,7 @@ public class ExercisesTest {
             "Zero should remain unchanged and negative should flip");
     }
 
-    // ===== Tests for isIncreasing(ListNode) =====
+    // // ===== Tests for isIncreasing(ListNode) =====
 
     @Test
     public void testIsIncreasingExampleTrue() {
