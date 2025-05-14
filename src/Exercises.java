@@ -90,6 +90,20 @@ public class Exercises {
      */
     public static void makePositive(ListNode head) {
 
+        if (head == null){
+            return;
+        }
+
+        ListNode current = head;
+
+        while (current != null){
+            if (current.data < 0) {
+                current.data = Math.abs(current.data);
+            }
+            current = current.next;
+        }
+
+
     }
 
     /**

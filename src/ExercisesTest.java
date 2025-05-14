@@ -112,79 +112,79 @@ public class ExercisesTest {
 
     // ===== Tests for addToEnd(ListNode, int) =====
 
-    @Test
-    public void testAddToEndExample() {
-        ListNode head = buildList(8, 3, 2, 7);
-        Exercises.addToEnd(head, 99);
-        String expected = "8 -> 3 -> 2 -> 7 -> 99";
-        assertEquals(expected, listToString(head),
-            "After addToEnd, expected " + expected + ", got " + listToString(head));
-    }
+    // @Test
+    // public void testAddToEndExample() {
+    //     ListNode head = buildList(8, 3, 2, 7);
+    //     Exercises.addToEnd(head, 99);
+    //     String expected = "8 -> 3 -> 2 -> 7 -> 99";
+    //     assertEquals(expected, listToString(head),
+    //         "After addToEnd, expected " + expected + ", got " + listToString(head));
+    // }
 
-    @Test
-    public void testAddToEndSingle() {
-        ListNode head = buildList(1);
-        Exercises.addToEnd(head, 8);
-        String expected = "1 -> 8";
-        assertEquals(expected, listToString(head),
-            "After addToEnd on single-node list, expected " + expected + ", got " + listToString(head));
-    }
+    // @Test
+    // public void testAddToEndSingle() {
+    //     ListNode head = buildList(1);
+    //     Exercises.addToEnd(head, 8);
+    //     String expected = "1 -> 8";
+    //     assertEquals(expected, listToString(head),
+    //         "After addToEnd on single-node list, expected " + expected + ", got " + listToString(head));
+    // }
 
-    @Test
-    public void testAddToEndNull() {
-        ListNode head = null;
-        assertDoesNotThrow(() -> Exercises.addToEnd(head, 5), "addToEnd(null,5) should not throw");
-        assertNull(head, "Head should remain null after addToEnd(null,5)");
-    }
+    // @Test
+    // public void testAddToEndNull() {
+    //     ListNode head = null;
+    //     assertDoesNotThrow(() -> Exercises.addToEnd(head, 5), "addToEnd(null,5) should not throw");
+    //     assertNull(head, "Head should remain null after addToEnd(null,5)");
+    // }
 
     // // ===== Tests for makePositive(ListNode) =====
 
-    // @Test
-    // public void testMakePositiveExample() {
-    //     ListNode head = buildList(-4, 7, -8, 6, -2);
-    //     Exercises.makePositive(head);
-    //     String expected = "4 -> 7 -> 8 -> 6 -> 2";
-    //     assertEquals(expected, listToString(head),
-    //         "After makePositive, expected " + expected + ", got " + listToString(head));
-    // }
+    @Test
+    public void testMakePositiveExample() {
+        ListNode head = buildList(-4, 7, -8, 6, -2);
+        Exercises.makePositive(head);
+        String expected = "4 -> 7 -> 8 -> 6 -> 2";
+        assertEquals(expected, listToString(head),
+            "After makePositive, expected " + expected + ", got " + listToString(head));
+    }
 
-    // @Test
-    // public void testMakePositiveNull() {
-    //     ListNode head = null;
-    //     assertNull(head, "Head should remain null after makePositive(null)");
-    // }
+    @Test
+    public void testMakePositiveNull() {
+        ListNode head = null;
+        assertNull(head, "Head should remain null after makePositive(null)");
+    }
 
-    // @Test
-    // public void testMakePositiveSinglePositive() {
-    //     ListNode head = buildList(3);
-    //     Exercises.makePositive(head);
-    //     assertEquals("3", listToString(head), "Single positive value should remain unchanged");
-    // }
+    @Test
+    public void testMakePositiveSinglePositive() {
+        ListNode head = buildList(3);
+        Exercises.makePositive(head);
+        assertEquals("3", listToString(head), "Single positive value should remain unchanged");
+    }
 
-    // @Test
-    // public void testMakePositiveSingleNegative() {
-    //     ListNode head = buildList(-3);
-    //     Exercises.makePositive(head);
-    //     assertEquals("3", listToString(head), "Single negative value should become positive");
-    // }
+    @Test
+    public void testMakePositiveSingleNegative() {
+        ListNode head = buildList(-3);
+        Exercises.makePositive(head);
+        assertEquals("3", listToString(head), "Single negative value should become positive");
+    }
 
-    // @Test
-    // public void testMakePositiveAtEnds() {
-    //     ListNode head = buildList(-1, 2, 3, -4);
-    //     Exercises.makePositive(head);
-    //     String expected = "1 -> 2 -> 3 -> 4";
-    //     assertEquals(expected, listToString(head),
-    //         "makePositive should flip negatives at both ends");
-    // }
+    @Test
+    public void testMakePositiveAtEnds() {
+        ListNode head = buildList(-1, 2, 3, -4);
+        Exercises.makePositive(head);
+        String expected = "1 -> 2 -> 3 -> 4";
+        assertEquals(expected, listToString(head),
+            "makePositive should flip negatives at both ends");
+    }
 
-    // @Test
-    // public void testMakePositiveWithZero() {
-    //     ListNode head = buildList(0, -5);
-    //     Exercises.makePositive(head);
-    //     String expected = "0 -> 5";
-    //     assertEquals(expected, listToString(head),
-    //         "Zero should remain unchanged and negative should flip");
-    // }
+    @Test
+    public void testMakePositiveWithZero() {
+        ListNode head = buildList(0, -5);
+        Exercises.makePositive(head);
+        String expected = "0 -> 5";
+        assertEquals(expected, listToString(head),
+            "Zero should remain unchanged and negative should flip");
+    }
 
     // // ===== Tests for isIncreasing(ListNode) =====
 
