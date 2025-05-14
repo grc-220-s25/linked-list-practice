@@ -15,6 +15,17 @@ public class Exercises {
 
         System.out.println("ListNode countNegative: " + countNegative(head));
 
+        addToEnd(head, 99);
+        ListNode current = head;
+        System.out.print("ListNode addToEnd: ");
+        while (current != null) {
+            System.out.print(current.data + " -> ");
+            if (current.next == null) {
+                System.out.print("null");
+                break;
+            }
+            current = current.next;
+        }
     }
 
     /**
@@ -78,7 +89,14 @@ public class Exercises {
      * @param toAdd the value to append in a new node
      */
     public static void addToEnd(ListNode head, int toAdd) {
-
+        ListNode current = head;
+        while (current != null) {
+            if (current.next == null) {
+                current.next = new ListNode(toAdd);
+                return;
+            }
+            current = current.next;
+        }
     }
 
     /**
