@@ -6,10 +6,16 @@ public class Exercises {
         head.next.next = new ListNode(10);
         head.next.next.next = new ListNode(1);
 
+        ListNode negHead = new ListNode(8);
+        negHead.next = new ListNode(-6);
+        negHead.next.next = new ListNode(7);
+        negHead.next.next.next = new ListNode(-3);
+        negHead.next.next.next.next = new ListNode(8);
 
 
     
         System.out.println(sum(head));
+        System.out.println(countNegative(negHead));        
 
     }
     /**
@@ -49,7 +55,16 @@ public class Exercises {
      * @return a count of the negative values in the list
      */
     public static int countNegative(ListNode head) {
+        int count = 0;
+        ListNode curr = head;
 
+        while(curr != null) {
+            if(curr.data < 0) {
+            count++;
+            }
+            curr = curr.next;
+        }
+        return count;
     }
 
     /**
