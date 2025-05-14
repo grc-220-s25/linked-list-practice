@@ -16,6 +16,8 @@ public class Exercises {
     
         System.out.println(sum(head));
         System.out.println(countNegative(negHead));        
+        addToEnd(head, 99);
+        System.out.println(sum(head));
 
     }
     /**
@@ -82,7 +84,16 @@ public class Exercises {
      * @param toAdd the value to append in a new node
      */
     public static void addToEnd(ListNode head, int toAdd) {
-
+        ListNode addedNode = new ListNode(toAdd);
+        
+        ListNode curr = head;
+        if (head == null) {
+            return;
+        }
+        while(curr.next != null) {
+            curr = curr.next;
+        }
+        curr.next = addedNode;        
     }
 
     /**
