@@ -1,4 +1,14 @@
 public class Exercises {
+    public static void main(String[] args) {
+        ListNode head = new ListNode(4);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(10);
+        head.next.next.next = new ListNode(1);
+
+        System.out.println("ListNode sum: " + sum(head));
+
+    }
+
     /**
      * Returns the sum of the values in the linked list.
      * 
@@ -12,7 +22,13 @@ public class Exercises {
      * @return sum of the values in the list
      */
     public static int sum(ListNode head) {
-        return -1;
+        ListNode current = head;
+        int sum = 0;
+        while (current != null) {
+            sum += current.data;
+            current = current.next;
+        }
+        return sum;
     }
 
     /**
