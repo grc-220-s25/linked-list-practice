@@ -41,6 +41,14 @@ public class Exercises {
         }
         System.out.println();
 
+        head = new ListNode(3);
+        head.next = new ListNode(1);
+        head.next.next = new ListNode(7);
+        head.next.next.next = new ListNode(12);
+        head.next.next.next.next = new ListNode(15);
+
+        System.out.println("ListNode isIncreasing: " + isIncreasing(head));
+
     }
 
     /**
@@ -153,6 +161,17 @@ public class Exercises {
      * @return whether the list is increasing
      */
     public static boolean isIncreasing(ListNode head) {
-        return false;
+        if (head == null || head.next == null) return true;
+
+        ListNode current = head;
+        while (current != null) {
+            if (current.next != null) {
+                if (current.data > current.next.data) {
+                    return false;
+                }
+            }
+            current = current.next;
+        }
+        return true;
     }
 }
