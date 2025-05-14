@@ -13,6 +13,11 @@ public class Exercises {
      */
     public static int sum(ListNode head) {
         int count = 0;
+
+        if (head == null){
+            return count;
+        }
+
         ListNode current = head;
         
         while (current != null){
@@ -37,6 +42,10 @@ public class Exercises {
      */
     public static int countNegative(ListNode head) {
         int count = 0;
+        
+        if (head == null){
+            return count;
+        }
 
         ListNode current = head;
 
@@ -44,6 +53,8 @@ public class Exercises {
             if (current.data < 0){
                 count++;
             }
+
+            current = current.next;
         }
 
         return count;
@@ -68,15 +79,22 @@ public class Exercises {
             return;
         }
 
+        if (head.next == null){
+            head.next = new ListNode(toAdd);
+            return;
+        }
+
         ListNode current = head;
 
         while (current != null){
             if (current.next == null){
                 current.next = new ListNode(toAdd);
+                break;
             }
-
             current = current.next;
         }
+
+        
     }
 
     /**
@@ -92,6 +110,19 @@ public class Exercises {
      * @param head the head of the list
      */
     public static void makePositive(ListNode head) {
+        if (head == null){
+            return;
+        }
+
+        ListNode current = head;
+
+        while (current != null){
+            if (current.data < 0){
+                current.data = current.data * (-1);
+            }
+
+            current = current.next;
+        }
 
     }
 
@@ -112,6 +143,26 @@ public class Exercises {
      * @return whether the list is increasing
      */
     public static boolean isIncreasing(ListNode head) {
-        return false;
+        if (head == null){
+            return true;
+        }
+
+        if (head.next == null){
+            return true;
+        }
+
+        ListNode current = head;
+
+        while (current != null){
+            if (current.next != null){
+                if (current.next.data < current.data){
+                    return false;
+                }
+            }
+
+            current = current.next;
+        }
+
+        return true;
     }
 }
