@@ -85,6 +85,13 @@ public class Exercises {
      * @param head the head of the list
      */
     public static void makePositive(ListNode head) {
+        ListNode curr = head;
+        while (curr != null) {
+            if (curr.data < 0) {
+                curr.data = -curr.data;
+            }
+            curr = curr.next;
+        }
 
     }
 
