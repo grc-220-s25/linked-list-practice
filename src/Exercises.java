@@ -12,7 +12,10 @@ public class Exercises {
         negHead.next.next.next = new ListNode(-3);
         negHead.next.next.next.next = new ListNode(8);
 
-
+        ListNode increasing = new ListNode(1);
+        increasing.next = new ListNode(2);
+        increasing.next.next = new ListNode(3);
+        increasing.next.next.next = new ListNode(4);        
     
         System.out.println(sum(head));
         System.out.println(countNegative(negHead));        
@@ -21,7 +24,8 @@ public class Exercises {
         System.out.println(countNegative(negHead));
         makePositive(negHead);
         System.out.println(countNegative(negHead));                
-
+        System.out.println(isIncreasing(increasing));
+                
     }
     /**
      * Returns the sum of the values in the linked list.
@@ -138,7 +142,21 @@ public class Exercises {
      * @return whether the list is increasing
      */
     public static boolean isIncreasing(ListNode head) {
+            ListNode curr = head;
+            
+            if (head == null || head.next == null) {
+                return true;
+            }
 
-    }
+            while(curr.next != null) {
+            if (curr.data > curr.next.data) {
+                return false;
+                }
+                curr = curr.next;
+            }
 
- }
+        return true;
+    }        
+}
+
+ 
