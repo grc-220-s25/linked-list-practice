@@ -1,5 +1,7 @@
 
 
+
+
 public class Exercises {
     /**
      * Returns the sum of the values in the linked list.
@@ -16,7 +18,6 @@ public class Exercises {
     public static int sum(ListNode head) {
         ListNode current = head;
         int sum = 0;
-        if(current == null) return 0;
 
         while (current != null){
 
@@ -66,6 +67,13 @@ public class Exercises {
      * @param toAdd the value to append in a new node
      */
     public static void addToEnd(ListNode head, int toAdd) {
+        if (head == null) return;
+        ListNode current = head;
+
+        while( current.next != null){
+            current = current.next;
+        }
+        current.next= new ListNode(toAdd);
 
     }
 
@@ -82,6 +90,7 @@ public class Exercises {
      * @param head the head of the list
      */
     public static void makePositive(ListNode head) {
+        
 
     }
 
